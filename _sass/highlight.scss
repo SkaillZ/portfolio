@@ -1,0 +1,86 @@
+#highlight {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    /*background-image: url('../images/highlight.jpg');
+    background-size: cover;*/
+    color: black;
+}
+
+.highlight-text {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: right;
+}
+
+#highlight .arrow-link {
+    clear: both;
+    display: block;
+    content: '';
+}
+
+.logo-masked {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45%;
+    -webkit-mask-image: $mask-url;
+    mask-image: $mask-url;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+.bg-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.bg-container.hiding {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.background {
+    min-width: 110%; 
+    min-height: 110%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    z-index: -20;
+    -webkit-filter: blur(60px);
+    -moz-filter: blur(60px);
+    -o-filter: blur(60px);
+    -ms-filter: blur(60px);
+    filter: blur(60px);
+}
+
+.background-damp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: background-color 1000ms;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.dark-pagination .background-damp {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 768px) {
+    .highlight-text .content > * {
+        grid-column: middle / end;
+    }
+
+    .highlight-text .content > h2 {
+        grid-column: middle / end; /* Gives the h2 the space it needs if it gets longer */
+    }
+}

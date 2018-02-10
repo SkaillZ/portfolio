@@ -1,0 +1,177 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Nunito', 'Helvetica', 'Arial', sans-serif;
+    color: #323232;
+    background-color: #f8f9fb;
+    margin: 0 0 100px; /* bottom = footer height */
+    line-height: 1.3em;
+    overflow-x: hidden;
+    transform-style: preserve-3d;
+}
+
+h1, h2, h3, h4, h5, h6, .subtitle {
+    font-family: 'Didact Gothic', 'Impact', cursive;
+    letter-spacing: 0.02em;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 2em;
+    line-height: 1em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.25em;
+}
+
+h1, h2 {
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-weight: 400;
+}
+
+a, a:link, a:visited, a:hover, a:active, a:focus {
+    text-decoration: none;
+    color: #ff9966;
+    transition: color 150ms;
+}
+
+a:hover, a:active, a:focus {
+    color: #9d5548;
+}
+
+a.arrow-link, a .arrow-link {
+    transition: color 150ms, transform 150ms;
+    display: inline-block;
+}
+
+a.arrow-link:hover, a.arrow-link:active, a.arrow-link:focus,
+a:hover .arrow-link, a:active .arrow-link, a:focus .arrow-link {
+    transform: translate(5px, 0);
+}
+
+a.arrow-link::before, a .arrow-link::before {
+    font-family: FontAwesome, sans-serif;
+    content: "\f061"; /* FontAwesome right arrow */
+    padding-right: 4px;
+    text-decoration: none;
+}
+
+hr {
+    height: 2px;
+    border: none;
+    border-bottom: 1px solid #323232;
+    box-shadow: 0 2px 2px -1px rgba(0,0,0,0.7);
+}
+
+h2:before {
+    /*
+        Displays an SVG with two lines on the left side of h2's.
+        We need to set some content because the background image doesn't show up otherwise.
+        To hide the content while still displaying the background, we can use a transparent text color.
+        This works in Chrome, Firefox, Edge and IE 11.
+        Setting a height and empty content would also work, this technique allows us to adjust
+        the background to the content height.
+    */
+    content: 'x';
+    color: transparent;
+
+    display: inline-block;
+    width: 10px;
+    margin-right: 5px;
+    background-image: url('../images/header-lines.svg');
+    background-size: cover;
+}
+
+section {
+    margin: 0;
+    box-sizing: border-box;
+    /*box-shadow: 0 0 3px 1px rgba(0,0,0,0.5);*/
+}
+
+.dark, #blog, footer {
+    color: white;
+    background-color: #323232;
+    /*box-shadow: 0 0 3px 1px rgba(0,0,0,0.5);*/
+}
+
+.light {
+    color: #323232;
+    background-color: #f8f9fb;
+}
+
+.content {
+    display: grid;
+    margin: 0 7px;
+    grid-template-columns: [start centered-start]
+        1fr [centered-end end];
+    grid-template-rows: [heading-start] auto [heading-end];
+}
+
+.content > * {
+    grid-column: start / end;
+}
+
+address {
+    font-style: normal; 
+}
+
+blockquote {
+    padding: 0 1em;
+    margin: 0;
+    color: #6a737d;
+    border-right: 0.25em solid #525252
+}
+
+/*
+    ::selection is not recognized by the W3C validator. It's specified though and ignored
+    by browsers that don't support it, so it should be fine.
+    https://developer.mozilla.org/de/docs/Web/CSS/::selection
+*/
+::selection {
+    background-color: black;
+    color: white;
+}
+
+#projects ::selection, footer ::selection {
+    background-color: white;
+    color: black;
+}
+
+@media (min-width: 768px) {
+    body {
+        margin: 0;
+    }
+
+    .content {
+         grid-template-columns: [start] 2fr
+            [centered-start] 3fr
+            [middle] 3fr
+            [centered-end] 2fr
+            [end];
+        width: 768px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 900px) {
+    .content {
+        width: 900px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .content {
+        width: 1200px;
+    }
+}

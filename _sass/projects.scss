@@ -1,0 +1,244 @@
+#projects {
+    padding-bottom: 10px;
+}
+
+#projects .projects-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: [heading-start] auto [heading-end projects-start] auto;
+}
+
+#projects::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.project {
+    display: inline-block;
+}
+
+.project figure {
+    margin: 0;
+    display: inline-block;
+    width: auto;
+}
+
+.project figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    font-size: 1rem;
+    line-height: normal;
+}
+
+.project figcaption .project-name {
+    display: inline-block;
+    height: 100%;
+    color: white;
+    padding: 0 5px;
+}
+.project figcaption::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    display: inline-block;
+    width: 0px;
+
+    /* CSS Triangle http://apps.eky.hk/css-triangle-generator/ */
+    border-style: solid;
+    border-width: 1.35rem 0 0 1.35rem;
+    border-color: transparent transparent transparent #838383;
+}
+
+.home .project figcaption .project-name {
+    background-color: #838383;
+}
+
+.project figure img {
+    width: 100%;
+    height: auto;
+}
+
+.project > a, .project > a:link, .project > a:visited {
+    display: block;
+    height: auto;
+    transition: transform 200ms, box-shadow 200ms;
+    transform: scale(1, 1);
+
+    /* Fixes an issue where the parent element is too big */
+    line-height: 0;
+    font-size: 0;
+    color: white;
+}
+
+.project > a:hover, .project > a:active, .project > a:focus {
+    transform: scale(1.005, 1.005);
+    box-shadow: 3px 4px 3px 0px rgb(120, 120, 120);
+}
+
+.highlight-project {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    background: rgba(255, 255, 255, 0.7);
+    grid-template-columns: [info-start] 1fr [info-end images-start] 2fr [images-end];
+    grid-template-rows: [images-start] 5fr [images-end side-images-start] 2fr [side-images-end];
+    grid-template-areas:
+        "info images"
+        "info side-images";
+    text-align: right;
+
+    .project-header {
+        transition: transform 1ms ease 1000ms;
+        margin-bottom: 1em;
+
+        h2 {
+            margin-bottom: .3em;
+        }
+    }
+
+    .info {
+        grid-area: info;
+        padding: 10px 45px 10px 30px;
+    }
+
+    .description {
+        margin-left: 15px;
+        transition: transform 1ms ease 1000ms;
+    }
+
+    .project-header, .description {
+        transform: translateX(calc(-100% - 60px));
+    }
+
+    .description p {
+        margin: .6em 0;
+    }
+
+    .description :first-child {
+        margin-top: .2em;
+    } 
+
+    .images {
+        grid-area: images;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        transform: translateX(100%);
+        transition: transform 1ms ease 1000ms;
+    }
+
+    .images.only {
+        grid-row: images-start / side-images-end;
+    }
+
+    .side-images {
+        display: flex;
+        flex-direction: row;
+        grid-area: side-images;
+        width: 100%;
+        height: 100%;
+        transform: translateX(100%);
+        transition: transform 1ms ease 1000ms;
+
+        div {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    .video-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%; 
+        overflow: hidden;
+      }
+
+    .video-container video {
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        
+        /* Center the video */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+.highlight-project.dark {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.highlight-project:nth-of-type(odd) {
+    grid-template-columns: [images-start] 2fr [images-end info-start] 1fr [info-end];
+    grid-template-areas:
+        "images info"
+        "images sideimages";
+    text-align: left;
+
+    .project-header, .description {
+        transform: translateX(calc(100% + 60px));
+    }
+
+    .info {
+        padding: 10px 30px 10px 45px;
+        grid-area: info;
+    }
+
+    .images, .side-images {
+        transform: translateX(-100%);
+    }
+}
+
+.highlight-project.active {
+    .project-header {
+        transform: translateX(0);
+        transition: transform 650ms ease 1300ms;
+    }
+
+    .description {
+        transform: translateX(0);
+        transition: transform 650ms ease 1500ms;
+    }
+
+    .images {
+        transform: translateX(0);
+        transition: transform 800ms ease 1000ms;
+    }
+
+    .side-images {
+        transform: translateX(0);
+        transition: transform 650ms ease 1200ms;
+    }
+}
+
+@media (min-width: 720px) {
+    #projects .projects-container {
+        grid-template-columns: [start] 1fr [middle] 1fr [end];
+        grid-template-areas:
+            "heading heading";
+        grid-gap: 10px;
+    }
+
+    .project figcaption .project-name {
+        padding: 0 10px;
+    }
+
+    .project figcaption {
+        font-size: 1.3rem;
+    }
+
+    .project figcaption::after {
+        border-width: 1.75rem 0 0 1.75rem;
+    }
+}

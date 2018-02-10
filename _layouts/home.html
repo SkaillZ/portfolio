@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Rene Buchmayer">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="Rene Buchmayer, Game dev, Game development, Frontend, Web dev, Web Development">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="theme-color" content="#323232">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="js/onepagescroll.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <title>{{ site.title }}</title>
+
+    {% for project in site.projects %}
+        {% assign image_type = "jpg" %}
+        {% if project.image_type %}
+            {% assign image_type = project.image_type %}
+        {% endif %}
+        <link rel="prefetch" href="images/{{ project.background_image }}-lowres.{{ image_type }}">
+    {% endfor %}
+</head>
+
+<body class="home">
+    
+        {% include highlight.html %}
+
+        {% for project in site.projects %}
+            {% include project.html %}
+        {% endfor %}
+
+        <!-- Projects -->
+        <section id="projects" aria-labelledby="projects-heading" class="light">
+            <div class="content">
+                <h2 id="projects-heading">Other projects</h2>
+                <div class="projects-container">
+                    <div id="project-yngsm" class="project">
+                        <a href="http://u3d.as/qkn">
+                            <figure>
+                                <img src="images/unitranslate.jpg" alt="UniTranslate logo" width="720" height="405">
+                                <figcaption>
+                                    <span class="project-name">UniTranslate</span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div id="project-textobfuscator" class="project">
+                        <a href="https://skaillz.net/obfuscator/">
+                            <figure>
+                                <img src="images/text-obfuscator.png" alt="Text Obfuscator logo" width="720" height="405">
+                                <figcaption>
+                                    <span class="project-name">Text Obfuscator</span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <footer id="social" aria-labelledby="footer-heading">
+                    <div class="content" id="footer-heading">
+                        <h2>Get In Touch</h2>
+                        <p class="social-text">Feel free to contact me on social media!</p>
+                        <div class="social-links">
+                            <a href="https://twitter.com/{{ site.twitter_username }}" title="Twitter">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/{{ site.linkedin_username }}/" title="LinkedIn">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://github.com/{{ site.github_username }}" title="GitHub">
+                                <i class="fa fa-github" aria-hidden="true"></i>
+                            </a>
+                            <a href="mailto:{{ site.email }}" title="E-Mail">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        </div>
+            
+                        <div role="contentinfo" class="copyright">
+                            &copy; Rene Buchmayer 2018
+                        </div>
+                    </div>
+                </footer>
+        </section>
+
+        <!-- Blog -->
+        <!--<section id="blog" aria-labelledby="blog-heading">
+        <div class="content">
+            <h2 id="blog-heading">Latest Blog Posts</h2>
+
+            <article>
+                <h3>Custom elements</h3>
+                <div class="article-summary">
+                    <p>
+                        Custom elements are <em>amazing</em> because they allow you to create a modern web page without
+                        nesting 300 <code>div</code>'s inside each other.
+                    </p>
+                </div>
+                <a href="https://developers.google.com/web/fundamentals/web-components/customelements"
+                   title="Link to Blog post: Custom Elements" class="arrow-link">Read more</a>
+            </article>
+
+            <article>
+                <h3>What web can do today</h3>
+                <ul>
+                    <li>Push messages</li>
+                    <li>Offline storage</li>
+                    <li>Geolocation</li>
+                    <li>...and much more</li>
+                </ul>
+                <p><strong>tl;dr</strong> It's a lot.</p>
+                <a href="https://whatwebcando.today/"
+                   title="Link to Blog post: What web can do today" class="arrow-link">Read more</a>
+            </article>
+        </div>
+    </section>-->
+    </main>
+    {% if jekyll.environment == "development" %}
+        <script src="http://localhost:35729/livereload.js"></script>
+    {% endif %}
+</body>
+
+</html>

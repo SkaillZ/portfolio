@@ -1,0 +1,66 @@
+{% assign highlight = site.data.highlight %}
+
+<div id="bg-image1" class="bg-container" aria-hidden="true">
+    <img class="background" src="{{ highlight.background_image }}" aria-hidden="true">
+</div>
+<div id="bg-image2" class="bg-container" aria-hidden="true">
+    <img class="background" src="{{ highlight.background_image }}" aria-hidden="true">
+</div>
+<div id="bg-video" class="bg-container" aria-hidden="true">
+    {% if highlight.background_video %}
+        <video class="background" autoplay="autoplay" muted="muted" preload="auto" loop="loop" poster="{{ highlight.background_image }}" aria-hidden="true">
+            <source src="{{ highlight.background_video }}" type="video/mp4">
+        </video>
+    {% endif %}
+</div>
+<div class="background-damp"></div>
+
+<main>
+<section id="highlight" class="active">
+        <header id="top">
+                <div class="content">
+                    <div class="header-items">
+                        <h1>{{ site.title }}</h1>
+        
+                        <nav id="main-nav" class="horizontal">
+                            <ul>
+                                <li>
+                                    <a href="#">About Me</a>
+                                </li>
+                                <li>
+                                    <a href="#">Projects</a>
+                                </li>
+                                <li>
+                                    <a href="#">Social</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        {% if highlight.background_video %}
+            <!--<video class="background" autoplay="autoplay" muted="muted" preload="auto" loop="loop" poster="{{ highlight.background_image }}" aria-hidden="true">
+                <source src="{{ highlight.background_video }}" type="video/mp4">
+            </video>-->
+            <div class="content" aria-hidden="true">
+                <video id="logo-video" class="logo-masked" autoplay="autoplay" muted="muted" preload="auto" loop="loop" poster="{{ highlight.background_image }}">
+                    <source src="{{ highlight.background_video }}" type="video/mp4">
+                </video>
+            </div>
+        {% else %}
+            <!--<img class="background" src="{{ highlight.background_image }}" aria-hidden="true">-->
+            <div class="content" aria-hidden="true">
+                <img class="logo-masked" src="{{ highlight.background_image }}">
+            </div>
+        {% endif %}
+    
+        <div class="highlight-text">
+            <div class="content">
+                <div>
+                    <h2>{{ highlight.title }}</h2>
+                    {{ highlight.description | markdownify }}
+                    <a href="#" class="arrow-link">{{ highlight.link_text }}</a>
+                </div>
+            </div>
+        </div>
+</section>

@@ -1,0 +1,17 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+$mask-url: url(../images/logo-sw.svg);
+
+@import 'https://fonts.googleapis.com/css?family=Didact+Gothic|Nunito:300';
+@import 'font-awesome.min.css';
+
+@import '_normalize.scss';
+@import 'page.scss';
+@import 'header.scss';
+@import 'highlight.scss';
+@import 'projects.scss';
+@import 'footer.scss';
+@import 'onepage-scroll.scss';
