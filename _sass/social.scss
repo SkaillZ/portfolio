@@ -1,9 +1,15 @@
-footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    overflow: hidden;
+#social {
+    p {
+        margin-top: 0;
+    }
+
+    .content {
+        height: 100%;
+        display: grid;
+        grid-template-rows: [header-start] auto [header-end text-start] auto [text-end social-links-start]
+            1fr [social-links-end copyright-start]
+            auto [copyright-end] 1em;
+    }
 }
 
 .copyright {
@@ -14,14 +20,14 @@ footer {
 .social-links {
     display: flex;
     flex-direction: row;
-    align-items: stretch;
     justify-content: center;
-    font-size: 50px;
+    align-items: center;
+    font-size: 15vw;
 }
 
 .social-links a, .social-links a:link {
     display: block;
-    padding: 0 10px;
+    padding: 0 2vw;
     color: white;
 }
 
@@ -29,11 +35,7 @@ footer {
     color: #ff9966;
 }
 
-footer {
-    padding: 30px 0;
-}
-
-@media (min-width: 900px) {
+/*@media (min-width: 900px) {
     footer .content h2, .social-text {
         grid-column: start / middle;
     }
@@ -43,4 +45,4 @@ footer {
         grid-column: middle / end;
         justify-content: flex-end;
     }
-}
+}*/

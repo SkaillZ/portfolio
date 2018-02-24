@@ -9,11 +9,8 @@
 
 .highlight-text {
     display: flex;
-    height: 100%;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    text-align: right;
+    height: 100%;
 }
 
 #highlight .arrow-link {
@@ -23,14 +20,13 @@
 }
 
 .logo-masked {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 45%;
+    width: 100%;
     -webkit-mask-image: $mask-url;
     mask-image: $mask-url;
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
 }
 
 .bg-container {
@@ -76,6 +72,24 @@
 }
 
 @media (min-width: 768px) {
+    .logo-masked {
+        mask-position: unset;
+        -webkit-mask-position: unset;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 45%;
+    }
+
+    .highlight-text {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        align-items: flex-end;
+        justify-content: center;
+        text-align: right;
+    }
+
     .highlight-text .content > * {
         grid-column: middle / end;
     }

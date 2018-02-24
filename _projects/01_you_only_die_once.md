@@ -1,7 +1,7 @@
 ---
 html_id: you-only-die-once
 title: "You Only Die Once"
-subtitle: Hagenberg Game Jam 2017 Winner
+subtitle: Hagenberg Game Jam 2017 Winner | Game Programming
 background_image: youonlydieonce
 background_video: media/yodo_movie.mp4
 side_images:

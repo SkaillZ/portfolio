@@ -40,6 +40,8 @@ h1, h2 {
     font-weight: 400;
 }
 
+.subtitle 
+
 a, a:link, a:visited, a:hover, a:active, a:focus {
     text-decoration: none;
     color: #ff9966;
@@ -101,7 +103,7 @@ section {
 
 .dark, #blog, footer {
     color: white;
-    background-color: #323232;
+    background: rgba(0, 0, 0, 0.7);
     /*box-shadow: 0 0 3px 1px rgba(0,0,0,0.5);*/
 }
 

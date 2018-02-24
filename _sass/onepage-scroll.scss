@@ -33,6 +33,7 @@ body, html {
     position: absolute;
     right: 10px;
     top: 50%;
+    transform: translateY(-50%);
     z-index: 5;
     list-style: none;
     margin: 0;
