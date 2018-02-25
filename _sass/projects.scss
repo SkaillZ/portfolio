@@ -223,7 +223,7 @@
     }
 }
 
-@media (min-width: 720px) {
+@media (min-width: 900px) {
     .highlight-project {
         grid-template-columns: 30px [info-start] 1fr [info-end images-start] 2fr [images-end] 40px;
         grid-template-rows: [images-start] 5fr [images-end side-images-start] 2fr [side-images-end];

@@ -39,10 +39,7 @@ h1, h2 {
 .subtitle {
     font-weight: 400;
 }
-
-.subtitle 
-
-a, a:link, a:visited, a:hover, a:active, a:focus {
+a, a:link, a:visited {
     text-decoration: none;
     color: #ff9966;
     transition: color 150ms;
@@ -52,21 +49,35 @@ a:hover, a:active, a:focus {
     color: #9d5548;
 }
 
-a.arrow-link, a .arrow-link {
+a.arrow-link, a .arrow-link, a.button-link {
     transition: color 150ms, transform 150ms;
     display: inline-block;
 }
 
 a.arrow-link:hover, a.arrow-link:active, a.arrow-link:focus,
-a:hover .arrow-link, a:active .arrow-link, a:focus .arrow-link {
+a:hover .arrow-link, a:active .arrow-link, a:focus .arrow-link,
+a.button-link:hover, a.button-link:active, a.button-link:focus {
     transform: translate(5px, 0);
 }
 
-a.arrow-link::before, a .arrow-link::before {
+a.arrow-link::before, a .arrow-link::before, a.button-link::before {
     font-family: FontAwesome, sans-serif;
     content: "\f061"; /* FontAwesome right arrow */
-    padding-right: 4px;
+    padding-right: .5em;
     text-decoration: none;
+}
+
+a.button-link, a.button-link:link, a.button-link:visited {
+    border: 1px solid #5e5e5e;
+    color: #5e5e5e;
+    border-radius: .5em;
+    margin: 10px 0;
+    padding: .5em 1em;
+}
+
+a.button-link:hover, a.button-link:active, a.button-link:focus {
+    border: 1px solid black;
+    color: black;
 }
 
 hr {

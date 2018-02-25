@@ -16,4 +16,7 @@ use_dark_theme: false
 
 After you are diagnosed with an incurable illness you have precisely five minutes left to live. However, there are still plenty of things you need to do before you finally kick the bucket. Clean up as many of your life’s loose ends as possible to increase you score - based on which your last day on earth will be rated. Also, you’re a weasel.
 
-[Download](https://playful-interactive-environments.github.io/gamejam/2017/#you-only-die-once)
+<a href="https://playful-interactive-environments.github.io/gamejam/2017/#you-only-die-once" class="button-link">Download</a>
+<!--
+    The button needs a custom class right now, so we can't do: [Download](https://playful-interactive-environments.github.io/gamejam/2017/#you-only-die-once)
+-->
