@@ -1,26 +1,39 @@
 #highlight {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 100%;
     /*background-image: url('../images/highlight.jpg');
     background-size: cover;*/
     color: black;
+
+    .content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.highlight-group {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 .5em 2em .5em;
 }
 
 .highlight-text {
-    position: absolute;
-    bottom: 0;
     display: flex;
     flex-direction: column;
 }
 
-#highlight .arrow-link {
-    clear: both;
-    display: block;
-    content: '';
+.logo-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 40px;
 }
 
 .logo-masked {
+    box-sizing: content-box;
     width: 100%;
     -webkit-mask-image: $mask-url;
     mask-image: $mask-url;
@@ -72,31 +85,20 @@
     background: rgba(0, 0, 0, 0.4);
 }
 
-@media (min-width: 768px) {
-    .logo-masked {
-        mask-position: unset;
-        -webkit-mask-position: unset;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 45%;
+@media (min-width: 900px) {
+    .highlight-group {
+        flex-direction: row;
+        margin: 0 0 0 2em;
+    }
+
+    .logo-container {
+        width: 100%;
+        padding: 0;
     }
 
     .highlight-text {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 100%;
         align-items: flex-end;
         justify-content: center;
         text-align: right;
-    }
-
-    .highlight-text .content > * {
-        grid-column: middle / end;
-    }
-
-    .highlight-text .content > h2 {
-        grid-column: middle / end; /* Gives the h2 the space it needs if it gets longer */
     }
 }

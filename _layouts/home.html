@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Rene Buchmayer">
+    <meta name="author" content="{{ site.author }}">
     <meta name="description" content="{{ site.description }}">
-    <meta name="keywords" content="Rene Buchmayer, Game dev, Game development, Frontend, Web dev, Web Development">
+    <meta name="keywords" content="{{ site.keywords }}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta name="theme-color" content="#323232">
@@ -17,6 +17,7 @@
 
     <title>{{ site.title }}</title>
 
+    <!-- Prefetch all low-res background images to be able to display them without load times -->
     {% for project in site.projects %}
         {% assign image_type = "jpg" %}
         {% if project.image_type %}
@@ -27,39 +28,18 @@
 </head>
 
 <body class="home">
-    
+    {% include background.html %}
+
+    <main>
         {% include highlight.html %}
 
         {% for project in site.projects %}
             {% include project.html %}
         {% endfor %}
 
-        <!-- Social -->
-        <section id="social" aria-labelledby="projects-heading" class="dark" data-dark="true">
-                <div class="content" id="footer-heading">
-                    <h2>Get In Touch</h2>
-                    <p class="social-text">Feel free to contact me on social media!</p>
-                    <div class="social-links">
-                        <a href="https://twitter.com/{{ site.twitter_username }}" title="Twitter">
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/{{ site.linkedin_username }}/" title="LinkedIn">
-                            <i class="fa fa-linkedin" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://github.com/{{ site.github_username }}" title="GitHub">
-                            <i class="fa fa-github" aria-hidden="true"></i>
-                        </a>
-                        <a href="mailto:{{ site.email }}" title="E-Mail">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                        </a>
-                    </div>
-        
-                    <div role="contentinfo" class="copyright">
-                        &copy; Rene Buchmayer 2018
-                    </div>
-                </div>
-        </section>
+        {% include social.html %}
     </main>
+
     {% if jekyll.environment == "development" %}
         <script src="http://localhost:35729/livereload.js"></script>
     {% endif %}

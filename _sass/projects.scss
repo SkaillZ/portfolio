@@ -1,86 +1,5 @@
-#projects {
-    padding-bottom: 10px;
-}
-
-#projects .projects-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: [heading-start] auto [heading-end projects-start] auto;
-}
-
-#projects::after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
-.project {
-    display: inline-block;
-}
-
-.project figure {
-    margin: 0;
-    display: inline-block;
-    width: auto;
-}
-
-.project figcaption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    opacity: 1;
-    font-size: 1rem;
-    line-height: normal;
-}
-
-.project figcaption .project-name {
-    display: inline-block;
-    height: 100%;
-    color: white;
-    padding: 0 5px;
-}
-.project figcaption::after {
-    position: absolute;
-    content: '';
-    bottom: 0;
-    display: inline-block;
-    width: 0px;
-
-    /* CSS Triangle http://apps.eky.hk/css-triangle-generator/ */
-    border-style: solid;
-    border-width: 1.35rem 0 0 1.35rem;
-    border-color: transparent transparent transparent #838383;
-}
-
-.home .project figcaption .project-name {
-    background-color: #838383;
-}
-
-.project figure img {
-    width: 100%;
-    height: auto;
-}
-
-.project > a, .project > a:link, .project > a:visited {
-    display: block;
-    height: auto;
-    transition: transform 200ms, box-shadow 200ms;
-    transform: scale(1, 1);
-
-    /* Fixes an issue where the parent element is too big */
-    line-height: 0;
-    font-size: 0;
-    color: white;
-}
-
-.project > a:hover, .project > a:active, .project > a:focus {
-    transform: scale(1.005, 1.005);
-    box-shadow: 3px 4px 3px 0px rgb(120, 120, 120);
-}
-
 .highlight-project {
     width: 100%;
-    height: 100vh;
     display: grid;
     background: rgba(255, 255, 255, 0.7);
     grid-template-columns: [start] 1fr [end];
@@ -241,24 +160,5 @@
         grid-template-areas:
             ". images info ."
             ". images sideimages .";
-    }
-
-    #projects .projects-container {
-        grid-template-columns: [start] 1fr [middle] 1fr [end];
-        grid-template-areas:
-            "heading heading";
-        grid-gap: 10px;
-    }
-
-    .project figcaption .project-name {
-        padding: 0 10px;
-    }
-
-    .project figcaption {
-        font-size: 1.3rem;
-    }
-
-    .project figcaption::after {
-        border-width: 1.75rem 0 0 1.75rem;
     }
 }

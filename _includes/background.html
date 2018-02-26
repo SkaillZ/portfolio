@@ -1,0 +1,16 @@
+{% assign highlight = site.data.highlight %}
+
+<div id="bg-image1" class="bg-container" aria-hidden="true">
+    <img class="background" src="{{ highlight.background_image }}" aria-hidden="true">
+</div>
+<div id="bg-image2" class="bg-container" aria-hidden="true">
+    <img class="background" src="{{ highlight.background_image }}" aria-hidden="true">
+</div>
+<div id="bg-video" class="bg-container" aria-hidden="true">
+    {% if highlight.background_video %}
+        <video class="background" autoplay="autoplay" muted="muted" preload="auto" loop="loop" poster="{{ highlight.background_image }}" aria-hidden="true">
+            <source src="{{ highlight.background_video }}" type="video/mp4">
+        </video>
+    {% endif %}
+</div>
+<div class="background-damp"></div>

@@ -12,9 +12,18 @@
     }
 }
 
-.copyright {
-    text-align: center;
+.bottom-info {
+    display: flex;
+    justify-content: space-between;
     font-size: 0.85em;
+
+    .credits {
+        text-align: left;
+    }
+
+    .copyright {
+        text-align: right;
+    }
 }
 
 .social-links {
@@ -32,17 +41,12 @@
 }
 
 .social-links a:hover, .social-links a:active, .social-links a:focus {
-    color: #ff9966;
+    color: #838383;;
 }
 
-/*@media (min-width: 900px) {
-    footer .content h2, .social-text {
-        grid-column: start / middle;
-    }
-
+/* Prevent the font size from growing beyond the container width */
+@media (min-width: 1200px) {
     .social-links {
-        grid-row: 1 / span 2;
-        grid-column: middle / end;
-        justify-content: flex-end;
+        font-size: 13em;
     }
-}*/
+}

@@ -23,7 +23,7 @@ h1 {
 
 nav {
     width: 100%;
-    font-size: 4vw;
+    font-size: 3.5vw;
     letter-spacing: 0.035em;
     text-align: center;
     line-height: normal;
@@ -87,7 +87,7 @@ nav a:hover::after, nav a:active::after, nav a:focus::after {
 
     nav {
         width: auto;
-        font-size: 1.1em;
+        font-size: 1em;
         letter-spacing: normal;
     }
 
@@ -97,5 +97,13 @@ nav a:hover::after, nav a:active::after, nav a:focus::after {
 
     nav ul li {
         margin-left: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    nav {
+        width: auto;
+        font-size: 1.1em;
+        letter-spacing: normal;
     }
 }

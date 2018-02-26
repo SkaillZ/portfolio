@@ -68,8 +68,8 @@ a.arrow-link::before, a .arrow-link::before, a.button-link::before {
 }
 
 a.button-link, a.button-link:link, a.button-link:visited {
-    border: 1px solid #5e5e5e;
-    color: #5e5e5e;
+    border: 1px solid #838383;
+    color: #838383;
     border-radius: .5em;
     margin: 10px 0;
     padding: .5em 1em;
@@ -179,12 +179,12 @@ blockquote {
 
 @media (min-width: 900px) {
     .content {
-        width: 900px;
+        width: 900px - 50px;
     }
 }
 
 @media (min-width: 1200px) {
     .content {
-        width: 1200px;
+        width: 1200px - 50px;
     }
 }
