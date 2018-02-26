@@ -17,7 +17,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     margin: 0 .5em 2em .5em;
 }
 
@@ -27,9 +27,7 @@
 }
 
 .logo-container {
-    display: flex;
-    justify-content: center;
-    padding: 0 40px;
+    padding: 0 3em 3em 3em;
 }
 
 .logo-masked {
@@ -92,6 +90,7 @@
     }
 
     .logo-container {
+        display: flex;
         width: 100%;
         padding: 0;
     }
