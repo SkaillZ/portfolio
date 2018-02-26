@@ -11,6 +11,7 @@ body {
     line-height: 1.3em;
     overflow-x: hidden;
     transform-style: preserve-3d;
+    font-size: .85em;
 }
 
 h1, h2, h3, h4, h5, h6, .subtitle {
@@ -71,7 +72,6 @@ a.button-link, a.button-link:link, a.button-link:visited {
     border: 1px solid #838383;
     color: #838383;
     border-radius: .5em;
-    margin: 10px 0;
     padding: .5em 1em;
 }
 
@@ -164,6 +164,7 @@ blockquote {
 @media (min-width: 768px) {
     body {
         margin: 0;
+        font-size: 1em;
     }
 
     .content {
