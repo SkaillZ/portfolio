@@ -1,7 +1,7 @@
 #!/bin/sh
 
 script_path="$( cd "$(dirname "$0")" ; pwd -P )"
-images_path="$script_path/images"
+images_path="$script_path/img"
 lowres_identifier="lowres"
 highres_identifier="highres"
 

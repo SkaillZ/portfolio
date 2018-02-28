@@ -4,9 +4,10 @@ title: Game Programming
 subtitle: You Only Die Once | Hagenberg Game Jam 2017 Winner
 background_image: youonlydieonce
 background_video: media/yodo_movie.mp4
-#side_images:
-#    - images/youonlydieonce-title.jpg
-#    - images/youonlydieonce-room.jpg
+side_images:
+    - img/youonlydieonce-highres.jpg
+    - img/youonlydieonce-title.jpg
+    - img/youonlydieonce-room.jpg
 use_dark_theme: false
 ---
 
@@ -14,7 +15,7 @@ use_dark_theme: false
 >
 > *Feedback of the jury*
 
-After his local dentist has diagnosed an incurable illness, Ronald has to make the most of the last five minutes of his life - which of course includes some shady activites!
+After his local dentist has diagnosed an incurable illness, Ronald has to make the most of the last five minutes of his life - which of course includes some shady activities!
 
 Made with Unity, Blender, Adobe Photoshop and Clip Studio Paint.
 

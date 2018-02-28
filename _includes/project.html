@@ -3,17 +3,16 @@
     {% assign dark_class = 'dark' %}
 {% endif %}
 
-{% assign only_class = '' %}
-{% if project.side_images == null %}
-    {% assign only_class = 'only' %}
-{% endif %}
-
 {% assign image_type = 'jpg' %}
 {% if project.image_type %}
     {% assign image_type = project.image_type %}
 {% endif %}
 
-<section id="{{ project.html_id }}" class="highlight-project {{ dark_class }}" data-dark="{{ project.use_dark_theme }}" data-bgimage="images/{{ project.background_image }}-lowres.{{ image_type }}">
+{% capture highres_image %}
+img/{{ project.background_image }}-highres.{{ image_type }}
+{% endcapture %}
+
+<section id="{{ project.html_id }}" class="highlight-project {{ dark_class }}" data-dark="{{ project.use_dark_theme }}" data-bgimage="img/{{ project.background_image }}-lowres.{{ image_type }}">
     <div class="info">
         <div class="project-header">
             <h2>{{ project.title }}</h2>
@@ -26,22 +25,16 @@
         </div>
     </div>
     {% if project.background_video %}
-        <div class="images {{ only_class }}">
-            <div class="video-container">
-                <video class="project-video" autoplay="autoplay" muted="muted" preload="none" loop="loop" poster="images/{{ project.background_image }}-highres.{{ image_type }}" aria-hidden="true">
+        <div class="images only" data-images="{{ project.side_images | join: ' ' }}">
+            <div class="video-container container">
+                <video class="project-video" autoplay="autoplay" muted="muted" preload="none" loop="loop" poster="{{ highres_image }}" aria-hidden="true">
                     <source src="{{ project.background_video }}" type="video/mp4">
                 </video>
             </div>
         </div>
     {% else %}
-        <div class="images {{ only_class }}" style="background-image: url(images/{{ project.background_image }}-highres.{{ image_type }})"></div>
-    {% endif %}
-
-    {% if project.side_images %}
-        <div class="side-images">
-            {% for image in project.side_images %}
-                <div style="background-image: url({{ image }})"></div>
-            {% endfor %}
+        <div class="images only" data-images="{{ project.side_images | join: ' ' }}">
+            <div class="container" style="background-image: url({{ highres_image }})"></div>
         </div>
     {% endif %}
 </section>

@@ -10,11 +10,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta name="theme-color" content="#323232">
 
+    <link rel="stylesheet" href="styles/lightgallery.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-    <script src="js/onepagescroll.js" defer></script>
-    <script src="js/main.js" defer></script>
+    <script src="js/onepagescroll.js"></script>
+    <script src="js/lightgallery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            Array.prototype.forEach.call(document.getElementsByClassName('images'), element => {
+            element.addEventListener('click', () => {
+            if (!element.dataset.images)
+                return;
+            let images = element.dataset.images.split(' ');
+            lightGallery(element, {
+                dynamic: true,
+                download: false,
+                dynamicEl: images.map(img => ({ src: img }))
+            })});
+            
+        });
+        });
+        
+    </script>
 
     <title>{{ site.title }}</title>
 
@@ -24,7 +43,7 @@
         {% if project.image_type %}
             {% assign image_type = project.image_type %}
         {% endif %}
-        <link rel="prefetch" href="images/{{ project.background_image }}-lowres.{{ image_type }}">
+        <link rel="prefetch" href="img/{{ project.background_image }}-lowres.{{ image_type }}">
     {% endfor %}
 </head>
 
