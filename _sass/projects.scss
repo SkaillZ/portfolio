@@ -1,7 +1,7 @@
 .highlight-project {
     width: 100%;
     display: grid;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.65);
     grid-template-columns: [start] 1fr [end];
     grid-template-rows: [info-start] auto [info-end images-start] 3fr [images-end];
     grid-template-areas:
@@ -94,7 +94,7 @@
 }
 
 .highlight-project.dark {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.65);
 }
 
 .highlight-project:nth-of-type(odd) {
