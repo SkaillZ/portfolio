@@ -1,6 +1,7 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="200 150 1500 750">
-    <rect x="576.24" y="152" width="768.52" height="297.82"/>
-    <polyline points="576.24 449.82 576.24 152 227 152"/>
-    <rect x="576.24" y="630.18" width="768.52" height="297.82"/>
-    <polyline points="1344.76 928 1344.76 630.18 1694 630.18"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1500 790" xml:space="preserve">
+<polygon points="376.2,2 27,2 376.2,299.8 1144.8,299.8 1144.8,2 "/>
+<polygon points="1144.8,480.2 376.2,480.2 376.2,778 1144.8,778 1494,480.2 "/>
 </svg>

@@ -86,11 +86,11 @@
     text-align: left;
 
     .project-header, .description {
-        transform: translateX(calc(100% + 60px));
+        transform: translateX(calc(100% + 50px));
     }
 
     .images, .side-images {
-        transform: translateX(calc(-100% - 40px));
+        transform: translateX(calc(-100% - 50px));
     }
 }
 
