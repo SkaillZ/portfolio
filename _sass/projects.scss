@@ -17,6 +17,10 @@
         h2 {
             margin-bottom: .3em;
         }
+
+        .subtitle {
+            margin-left: 15px;
+        }
     }
 
     .info {
@@ -115,7 +119,7 @@
 @media (min-width: 900px) {
     .highlight-project {
         grid-template-columns: 30px [info-start] 1fr [info-end images-start] 2fr [images-end] 40px;
-        grid-template-rows: [images-start] 5fr [images-end side-images-start] 2fr [side-images-end];
+        grid-template-rows: [images-start] 5fr [images-end side-images-start] 3fr [side-images-end];
         grid-template-areas:
             ". info images ."
             ". info side-images .";
@@ -135,7 +139,7 @@
         grid-template-columns: 40px [images-start] 2fr [images-end info-start] 1fr [info-end] 30px;
         grid-template-areas:
             ". images info ."
-            ". images sideimages .";
+            ". side-images info .";
 
         .images {
             margin: 30px 0 30px 0;

@@ -1,9 +1,14 @@
-{% assign dark_class = "" %}
+{% assign dark_class = '' %}
 {% if project.use_dark_theme %}
-    {% assign dark_class = "dark" %}
+    {% assign dark_class = 'dark' %}
 {% endif %}
 
-{% assign image_type = "jpg" %}
+{% assign only_class = '' %}
+{% if project.side_images == null %}
+    {% assign only_class = 'only' %}
+{% endif %}
+
+{% assign image_type = 'jpg' %}
 {% if project.image_type %}
     {% assign image_type = project.image_type %}
 {% endif %}
@@ -21,7 +26,7 @@
         </div>
     </div>
     {% if project.background_video %}
-        <div class="images">
+        <div class="images {{ only_class }}">
             <div class="video-container">
                 <video class="project-video" autoplay="autoplay" muted="muted" preload="none" loop="loop" poster="images/{{ project.background_image }}-highres.{{ image_type }}" aria-hidden="true">
                     <source src="{{ project.background_video }}" type="video/mp4">
@@ -29,13 +34,13 @@
             </div>
         </div>
     {% else %}
-        <div class="images {{ 'only' unless project.side_images }}" style="background-image: url(images/{{ project.background_image }}-highres.{{ image_type }})"></div>
+        <div class="images {{ only_class }}" style="background-image: url(images/{{ project.background_image }}-highres.{{ image_type }})"></div>
     {% endif %}
 
     {% if project.side_images %}
         <div class="side-images">
             {% for image in project.side_images %}
-            <div style="background-image: url({{ image }})"></div>
+                <div style="background-image: url({{ image }})"></div>
             {% endfor %}
         </div>
     {% endif %}

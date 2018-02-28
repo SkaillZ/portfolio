@@ -48,7 +48,7 @@ onePageScroll(SCROLL_CONTAINER_SELECTOR, {
         let lastIndex = getNumberOfSections();
 
         let section = getSectionByIndex(index);
-        if (section.dataset.dark) {
+        if (section.dataset.dark && section.dataset.dark.toLowerCase() === 'true') { // data-dark is a string
             document.body.classList.add('dark-pagination');
         }
         else {

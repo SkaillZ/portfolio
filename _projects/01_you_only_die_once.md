@@ -1,20 +1,22 @@
 ---
 html_id: you-only-die-once
-title: "You Only Die Once"
-subtitle: Hagenberg Game Jam 2017 Winner | Game Programming
+title: Game Programming
+subtitle: You Only Die Once | Hagenberg Game Jam 2017 Winner
 background_image: youonlydieonce
 background_video: media/yodo_movie.mp4
-side_images:
-    - images/youonlydieonce-title.jpg
-    - images/youonlydieonce-room.jpg
+#side_images:
+#    - images/youonlydieonce-title.jpg
+#    - images/youonlydieonce-room.jpg
 use_dark_theme: false
 ---
 
-> Erstaunlich, wie viel Content die Entwickler in diesem Spiel untergebracht haben...
+> It's amazing how much content the developers were able to put into the game...
 >
-> *Feedback der Fachjury*
+> *Feedback of the jury*
 
-After you are diagnosed with an incurable illness you have precisely five minutes left to live. However, there are still plenty of things you need to do before you finally kick the bucket. Clean up as many of your life’s loose ends as possible to increase you score - based on which your last day on earth will be rated. Also, you’re a weasel.
+After his local dentist has diagnosed an incurable illness, Ronald has to make the most of the last five minutes of his life - which of course includes some shady activites!
+
+Made with Unity, Blender, Adobe Photoshop and Clip Studio Paint.
 
 <a href="https://playful-interactive-environments.github.io/gamejam/2017/#you-only-die-once" class="button-link">Download</a>
 <!--
