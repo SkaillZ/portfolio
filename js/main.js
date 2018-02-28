@@ -15,6 +15,21 @@ function syncVideos(primary, secondary) {
         secondary.currentTime = primary.currentTime;
 }
 
+function registerLightboxHandlers() {
+    Array.prototype.forEach.call(document.getElementsByClassName('images'), element => {
+        element.addEventListener('click', () => {
+            if (!element.dataset.images)
+                return;
+            let images = element.dataset.images.split(' ');
+            lightGallery(element, {
+                dynamic: true,
+                download: false,
+                dynamicEl: images.map(img => ({ src: img }))
+            })
+        });
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     let bgImageContainer1 = document.getElementById('bg-image1');
     let bgImageContainer2 = document.getElementById('bg-image2');
@@ -39,6 +54,58 @@ document.addEventListener('DOMContentLoaded', () => {
         shouldSync = true;
     }
 
+    function beforeMove(index) {
+        index = parseInt(index); // 1-based
+        let lastIndex = getNumberOfSections();
+
+        let section = getSectionByIndex(index);
+        if (section.dataset.dark && section.dataset.dark.toLowerCase() === 'true') { // data-dark is a string
+            document.body.classList.add('dark-pagination');
+        }
+        else {
+            document.body.classList.remove('dark-pagination');
+        }
+
+        let bgimage = section.dataset.bgimage;
+        if (bgimage) {
+            if (index % 2 == 0 && bgImage1) {
+                bgImage1.src = bgimage;
+                bgImageContainer1.classList.remove('hiding');
+                bgImageContainer2.classList.add('hiding');
+            }
+            else if (bgImage2) {
+                bgImage2.src = bgimage;
+                bgImageContainer2.classList.remove('hiding');
+                bgImageContainer1.classList.add('hiding');
+            }
+        }
+
+        if (bgVideo) {
+            if (index === VIDEO_PAGE_INDEX || index === lastIndex) {
+                bgVideo.style.display = '';
+                bgVideoContainer.classList.remove('hiding');
+            }
+            else {
+                pausePlayback();
+                bgVideoContainer.classList.add('hiding');
+            }
+        }
+    }
+
+    function afterMove(index) {
+        index = parseInt(index);
+        let lastIndex = getNumberOfSections();
+
+        if (bgVideo) {
+            if (index === VIDEO_PAGE_INDEX || index === lastIndex) {
+                resumePlayback();
+            }
+            else {
+                bgVideo.style.display = 'none';
+            }
+        }
+    }
+
     document.getElementById('loading').classList.add('hidden');
 
     logoVideo.addEventListener('timeupdate', () => {
@@ -50,62 +117,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)
         pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
         updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-        beforeMove: index => {
-            index = parseInt(index); // 1-based
-            let lastIndex = getNumberOfSections();
-
-            let section = getSectionByIndex(index);
-            if (section.dataset.dark && section.dataset.dark.toLowerCase() === 'true') { // data-dark is a string
-                document.body.classList.add('dark-pagination');
-            }
-            else {
-                document.body.classList.remove('dark-pagination');
-            }
-
-            let bgimage = section.dataset.bgimage;
-            if (bgimage) {
-                if (index % 2 == 0 && bgImage1) {
-                    bgImage1.src = bgimage;
-                    bgImageContainer1.classList.remove('hiding');
-                    bgImageContainer2.classList.add('hiding');
-                }
-                else if (bgImage2) {
-                    bgImage2.src = bgimage;
-                    bgImageContainer2.classList.remove('hiding');
-                    bgImageContainer1.classList.add('hiding');
-                }
-            }
-
-            if (bgVideo) {
-                if (index === VIDEO_PAGE_INDEX || index === lastIndex) {
-                    bgVideo.style.display = '';
-                    bgVideoContainer.classList.remove('hiding');
-                }
-                else {
-                    pausePlayback();
-                    bgVideoContainer.classList.add('hiding');
-                }
-            }
-        },
-        afterMove: index => {
-            index = parseInt(index);
-            let lastIndex = getNumberOfSections();
-
-            if (bgVideo) {
-                if (index === VIDEO_PAGE_INDEX || index === lastIndex) {
-                    resumePlayback();
-                }
-                else {
-                    bgVideo.style.display = 'none';
-                }
-            }
-        },
+        beforeMove: beforeMove,
+        afterMove: afterMove,
         loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
         keyboard: true,                  // You can activate the keyboard controls
         responsiveFallback: false        // You can fallback to normal page scroll by defining the width of the browser in which
         // you want the responsive fallback to be triggered. For example, set this to 600 and whenever 
         // the browser's width is less than 600, the fallback will kick in.
     });
+
+    registerLightboxHandlers();
 });
 
 /*

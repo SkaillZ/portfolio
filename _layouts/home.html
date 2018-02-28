@@ -17,23 +17,6 @@
     <script src="js/onepagescroll.js"></script>
     <script src="js/lightgallery.min.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            Array.prototype.forEach.call(document.getElementsByClassName('images'), element => {
-            element.addEventListener('click', () => {
-            if (!element.dataset.images)
-                return;
-            let images = element.dataset.images.split(' ');
-            lightGallery(element, {
-                dynamic: true,
-                download: false,
-                dynamicEl: images.map(img => ({ src: img }))
-            })});
-            
-        });
-        });
-        
-    </script>
 
     <title>{{ site.title }}</title>
 
