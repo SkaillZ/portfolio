@@ -22,7 +22,6 @@
 .highlight-text {
     display: flex;
     flex-direction: column;
-    margin-left: 2em;
 }
 
 .logo-container {
@@ -98,5 +97,6 @@
         align-items: flex-end;
         justify-content: center;
         text-align: right;
+        margin-left: 2em;
     }
 }
