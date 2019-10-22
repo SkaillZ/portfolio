@@ -107,6 +107,11 @@
     .images, .side-images {
         transform: translateX(calc(-100% - 50px));
     }
+
+    blockquote {
+        border-right: none;
+        border-left: 0.25em solid #383838;
+    }
 }
 
 .highlight-project.active {

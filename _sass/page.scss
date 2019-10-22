@@ -116,6 +116,16 @@ section {
     color: white;
     background: rgba(0, 0, 0, 0.7);
     /*box-shadow: 0 0 3px 1px rgba(0,0,0,0.5);*/
+
+    a.button-link, a.button-link:link, a.button-link:visited {
+        border-color: #aaa;
+        color: #aaa;
+    }
+
+    a.button-link:hover, a.button-link:active, a.button-link:focus {
+        border-color: white;
+        color: white;
+    }
 }
 
 .light {
