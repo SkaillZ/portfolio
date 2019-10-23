@@ -57,7 +57,7 @@
     }
 
     .images, .side-images {
-        transform: translateX(calc(100% + 40px));
+        transform: translateX(calc(100% + 50px));
         transition: transform 1ms ease 1000ms;
     }
 
@@ -101,11 +101,11 @@
     text-align: left;
 
     .project-header, .description {
-        transform: translateX(calc(100% + 50px));
+        transform: translateX(calc(100% + 60px));
     }
 
     .images, .side-images {
-        transform: translateX(calc(-100% - 50px));
+        transform: translateX(calc(-100% - 60px));
     }
 
     blockquote {

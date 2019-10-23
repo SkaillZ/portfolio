@@ -15,6 +15,3 @@ use_dark_theme: true
 Made with Unity.
 
 <a href="https://www.youtube.com/watch?v=NBaedn_FDMI" class="button-link">Watch the trailer on YouTube</a>
-<!--
-    The button needs a custom class right now, so we can't do: [Download](https://playful-interactive-environments.github.io/gamejam/2017/#you-only-die-once)
--->
