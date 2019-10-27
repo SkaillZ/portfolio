@@ -10,7 +10,7 @@ side_images:
 use_dark_theme: true
 ---
 
-"Smoke & Mirrors" is a unique co-op online game for two players where communications is key. The two partners have communicate verbally to solve puzzles and defeat enemies. Each player can only see part of the game world, so looking at the other player's screen is cheating!
+"Smoke & Mirrors" is a unique co-op online game for two players where communication is key. The two partners have communicate verbally to solve puzzles and defeat enemies. Each player can only see part of the game world, so looking at the other player's screen is cheating!
 
 Made with Unity.
 
